@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd">
+    <!--    stanalone list-->
+    <util:list list-class="java.util.Vector" id="mybestfriends">
+        <value>Pratik</value>
+        <value>Anamika</value>
+        <value>Vaishnavi</value>
+        <value>Mohini</value>
+    </util:list>
+
+    <util:map map-class="java.util.TreeMap" id="fee">
+        <entry key="maths" value="2000"/>
+        <entry key="english" value="1500"/>
+        <entry key="science" value="1000"/>
+    </util:map>
+
+<!--    standalone property-->
+
+    <util:properties id="dbconfig">
+        <prop key="driver"> com.mysql.jdbc.Driver</prop>
+    </util:properties>
+
+    <bean class="com.akanksha.springcore.standalone.collections.Person" name="person1">
+        <property name="friends">
+            <ref bean="mybestfriends"/>
+        </property>
+        <property name="feeStructure" ref="fee"/>
+        <property name="properties" ref="dbconfig"/>
+    </bean>
+</beans>
