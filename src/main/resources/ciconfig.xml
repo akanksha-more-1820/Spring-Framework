@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org./schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean class="com.akanksha.springcore.ci.Certi" name="certi" c:name="Python Prog">
+
+    </bean>
+    <bean class="com.akanksha.springcore.ci.Person" name="person">
+        <constructor-arg >
+            <value>
+                Ram
+            </value>
+        </constructor-arg>
+        <constructor-arg type="int">
+            <value>
+                101
+            </value>
+        </constructor-arg>
+        <constructor-arg ref="certi"></constructor-arg>
+        <constructor-arg>
+            <list>
+                <value>qwe</value>
+                <value>ghj</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+<!--    <bean class="com.akanksha.springcore.ci.Person" name="person" c:name="Pratik" c:personId="23"  >-->
+<!--    </bean>-->
+
+    <bean class="com.akanksha.springcore.ci.Addition" name="add">
+        <constructor-arg value="12" type="String" index="1"/>
+        <constructor-arg value="34" type="String" index="0"/>
+    </bean>
+</beans>
