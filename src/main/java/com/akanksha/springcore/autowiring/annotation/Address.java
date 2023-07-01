@@ -1,4 +1,4 @@
-package com.akanksha.springcore.autowiring;
+package com.akanksha.springcore.autowiring.annotation;
 
 public class Address {
 
@@ -11,7 +11,7 @@ public class Address {
 
     public void setStreet(String street) {
 
-        System.out.println("calling setter");this.street = street;
+        System.out.println("calling setter of address street");this.street = street;
     }
 
     public String getCity() {
